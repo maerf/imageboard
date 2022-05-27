@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>No cats Imageboard</title>
+    <link rel="stylesheet" href="/css/base.css">
+    <link id="style" rel="stylesheet" href="/css/ver1.css">
+</head>
+<script>function toggle() {
+  var a = document.getElementById("style");
+ console.log(a);
+  a.x = 'ver1' == a.x ? 'ver2' : 'ver1'; 
+  a.href = "/css/" + a.x + '.css';
+}</script>
+
+<body>
+  
+    <h1>Imageboard</h1>
+
+    <!-- vue instance container -->
+    <div id="main">
+        <first-component :image-id="selectedImageId"  v-if="selectedImageId"  @close="closeModal" @changeover="setImageId"></first-component>
+           <form class="uploadForm">
+            <input v-model="username" type="text" name="username" placeholder="username" />
+            <input v-model="title" type="text" name="title" placeholder="title" />
+            <input v-model="description" type="text" name="description" placeholder="description" />
+            <input @change="fileSelectHandler" type="file" name="file" accept="image/*" />
+            <button @click.prevent="clickHandler">Submit</button>
+             <input v-model="filterFieldContent" v-on:keyup.enter="doFilter(filterFieldContent)" type="text" name="filterString" placeholder="Search this ImageBoard" />
+            <button type="button" @click.prevent onclick="toggle()">Switch</button>
+        </form> 
+        
+            <div class="gridContainer">
+            <div v-for="image in images" v-bind:key="image.id" class="card">    
+              
+                    <div class="cardImage" @click="setImageId(image.id)" v-bind:style="{ 'background-image': 'url(' + image.url + ')' }" alt=""> 
+                          <img class="cardImage" @click="setImageId(image.id)" :src="image.url" alt="">
+                         <div class="cardText">        
+                            <p>{{image.title}}</p> 
+                        </div>
+                  </div>
+            </div>
+        </div>
+    
+        <div class="footerWrapper">
+            <button class="moreButton" v-if="moreAvailable" @click.prevent="getMore">More</button>
+        </div>
+    </div>
+
+    <script src="/js/app.js" type="module" crossorigin="use-credentials"></script>
+</body>
+
+</html>
+        

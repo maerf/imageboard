@@ -1,0 +1,116 @@
+/** @format */
+
+* {
+    /* background-color: red; */
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.uploadForm {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    background-color: black;
+}
+
+#main {
+}
+
+.footerWrapper {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+}
+
+.moreButton {
+    min-width: 200px;
+}
+
+html * {
+    font-size: 16px;
+    line-height: 1.625;
+    font-family: system-ui, sans-serif;
+}
+
+#modal h4 .right {
+    align-self: end;
+}
+
+#modal * h4 * .center {
+    align-self: center;
+}
+
+#modal * h4 * .left {
+    align-self: flex-start;
+}
+
+#modal {
+    position: fixed;
+    top: 5vw;
+    left: 5vw;
+    right: 5vw;
+    bottom: 5vw;
+    /* inset: 10px; */
+    background-color: black;
+    color: white;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.modalImage {
+    margin: 0 auto;
+    width: 300px;
+    align-self: center;
+}
+
+#xButton {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    border: 1px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#comments > input:focus {
+    background-color: black !important;
+    color: white !important;
+}
+#comments * input {
+    background-color: rgb(29, 29, 29) !important;
+    border: 1px dotted rgb(37, 37, 37);
+    color: white !important;
+}
+
+#comments {
+    /* wtf nur wenn NUR x hidden erscheint y nicht wenn nichts da. warum wenn folgendes setzte nicht ausgeblendete außer wenn overflow  overflow-y: scroll; */
+    overflow-x: hidden;
+}
+
+#comments button {
+    background-color: black;
+    border: 1px solid lightgray;
+    color: lightgray;
+}
+
+.commentContainer {
+    padding: 5px 0px;
+}
+
+.commentOnBlock {
+    color: lightgray;
+}
+
+.commentInputsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
