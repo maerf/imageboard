@@ -53,14 +53,15 @@ const commentComponent = {
         },
     },
     template: `<div id="comments">
-    <p class="commentContainer" v-for="comment in comments">
-        <div class="commentOnBlock">  {{comment.username}} on {{new Date(comment["created_at"]).toLocaleString()}}  </div>
-        {{comment.text}}  </p> <!-- {{comment.id}} //-->
     <div class="commentInputsContainer">  
         <input style="flex-grow:1;" v-model="newCommentText" type="text" name="title" placeholder="Your Comment" required />
         <input style="min-width: 100px;" width="50" v-model="newCommentUsername" type="text" name="title" placeholder="Username" required />
         <button @click="postComment">post comment</button>
     </div>
+    <p class="commentContainer" v-for="comment in comments">
+        <div class="commentOnBlock">  {{comment.username}} on {{new Date(comment["created_at"]).toLocaleString()}}  </div>
+        {{comment.text}}  </p> <!-- {{comment.id}} //-->
+    
                 </div>`,
 };
 

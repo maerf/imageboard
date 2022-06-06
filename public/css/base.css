@@ -6,6 +6,18 @@
     margin: 0;
 }
 
+.modalNavWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin: 0 auto;
+}
+
 .uploadForm {
     display: flex;
     flex-direction: row;
@@ -62,7 +74,7 @@ html * {
 }
 .modalImage {
     margin: 0 auto;
-    width: 300px;
+    height: 300px;
     align-self: center;
 }
 

@@ -1,13 +1,13 @@
 /** @format */
 
 import * as Vue from "./vue.js";
-import firstComponent from "./firstComponent.js";
+import modalComponent from "./modalComponent.js";
 
-console.log(firstComponent);
+console.log(modalComponent);
 
 Vue.createApp({
     components: {
-        "first-component": firstComponent,
+        "first-component": modalComponent,
     },
     data() {
         return {

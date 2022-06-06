@@ -1,7 +1,7 @@
 /** @format */
 import commentComponent from "./commentComponent.js";
 
-const firstComponent = {
+const modalComponent = {
     watch: {
         // Note: only simple paths. Expressions are not supported.
         imageId(id) {
@@ -55,13 +55,18 @@ const firstComponent = {
     },
     template: `<div id="modal" @keyup.arrow-keys="log">
     <div @click="close" id="xButton">X</div>
+    <div class="modalNavWrapper">
+     <div v-if="image.idNext" class="nextimage" @click='$emit("changeover", image.idNext)'><--</div>
+            <div class="flexColumn">
                     <h1 style="align-self:center">{{image.title}}</h1>
                     <img class="modalImage" :src="image.url"/>
                     <h4 v-if="image.description" style="align-self: center">Description: {{image.description}}</h4>
-                    
-               <div v-if="image.idNext" class="nextimage" @click='$emit("changeover", image.idNext)' >Before</div>
-                        {{image[url]}}
-                        <div v-if="image.idBefore" class="nextimage" @click='$emit("changeover", image.idBefore)'>Next</div>
+                    {{image[url]}}
+                    </div>
+              
+                        
+                        <div v-if="image.idBefore" class="nextimage" @click='$emit("changeover", image.idBefore)'>--></div>
+                        </div>
                    <!-- <h4 >By <em>{{firstChar(image.username)}}</em> on {{new Date(image["created_at"]).toLocaleString()}}</h4> //-->
              <h4 style="align-self: flex-end">By <em>{{image.username}}</em> on {{new Date(image["created_at"]).toLocaleString()}}</h4> 
                     <comment-component :image-id="imageId" />
@@ -71,4 +76,4 @@ const firstComponent = {
                 </div>`,
 };
 
-export default firstComponent;
+export default modalComponent;

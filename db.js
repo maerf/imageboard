@@ -3,7 +3,7 @@
 const spicedPg = require("spiced-pg");
 const db = spicedPg(process.env.DATABASE_URL || `postgres:spiced:spiced@localhost:5432/imageboard`);
 
-const doInit = true;
+const doInit = false;
 if (doInit)
     db.query(
         `drop table if exists comments cascade;

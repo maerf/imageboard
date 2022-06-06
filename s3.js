@@ -1,3 +1,5 @@
+/** @format */
+
 const aws = require("aws-sdk");
 const fs = require("fs");
 
@@ -17,7 +19,6 @@ exports.upload = (req, res, next) => {
     if (!req.file) {
         return res.sendStatus(500);
     }
-!
     const { filename, mimetype, size, path } = req.file;
 
     const promise = s3
